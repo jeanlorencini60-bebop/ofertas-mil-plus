@@ -1,0 +1,56 @@
+name: OFERTAS MIL +
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ofertas-mil-plus
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Run machine
+        env:
+          DRY_RUN: ${{ vars.DRY_RUN || 'true' }}
+          MIN_DISCOUNT_PCT: "15"
+          MAX_PRICE_BRL: "5000"
+          REPOST_COOLDOWN_HOURS: "168"
+          MAX_POSTS_PER_RUN: "3"
+          REQUEST_TIMEOUT: "20"
+          WHAPI_BASE_URL: ${{ vars.WHAPI_BASE_URL || 'https://gate.whapi.cloud' }}
+          WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
+          WHATSAPP_CHANNEL_JID: ${{ secrets.WHATSAPP_CHANNEL_JID }}
+        run: python app/main.py
+
+      - name: Save state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/offers.sqlite3
+          if git diff --cached --quiet; then
+            echo "No state changes."
+          else
+            git commit -m "chore: update offer state"
+            git push
+          fi

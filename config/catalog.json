@@ -1,0 +1,11 @@
+{
+  "brand": "OFERTAS MIL +",
+  "whatsapp_channel_url": "https://whatsapp.com/channel/0029VbE8GNCFXUugvlHSwM2F",
+  "products": [
+    {"id":"p001","affiliate_url":"https://meli.la/2EX3h5P","enabled":true},
+    {"id":"p002","affiliate_url":"https://meli.la/32n8GkD","enabled":true},
+    {"id":"p003","affiliate_url":"https://meli.la/1tnasD6","enabled":true},
+    {"id":"p004","affiliate_url":"https://meli.la/2cSvCPQ","enabled":true},
+    {"id":"p005","affiliate_url":"https://meli.la/1eFA4AU","enabled":true}
+  ]
+}
