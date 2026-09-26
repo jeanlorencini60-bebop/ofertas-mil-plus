@@ -33,11 +33,11 @@ jobs:
       - name: Run machine
         env:
           DRY_RUN: ${{ vars.DRY_RUN || 'true' }}
-          MIN_DISCOUNT_PCT: "15"
-          MAX_PRICE_BRL: "5000"
-          REPOST_COOLDOWN_HOURS: "168"
-          MAX_POSTS_PER_RUN: "3"
-          REQUEST_TIMEOUT: "20"
+          MIN_DISCOUNT_PCT: ${{ vars.MIN_DISCOUNT_PCT || '15' }}
+          MAX_PRICE_BRL: ${{ vars.MAX_PRICE_BRL || '5000' }}
+          REPOST_COOLDOWN_HOURS: ${{ vars.REPOST_COOLDOWN_HOURS || '168' }}
+          MAX_POSTS_PER_RUN: ${{ vars.MAX_POSTS_PER_RUN || '3' }}
+          REQUEST_TIMEOUT: ${{ vars.REQUEST_TIMEOUT || '20' }}
           WHAPI_BASE_URL: ${{ vars.WHAPI_BASE_URL || 'https://gate.whapi.cloud' }}
           WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
           WHATSAPP_CHANNEL_JID: ${{ secrets.WHATSAPP_CHANNEL_JID }}

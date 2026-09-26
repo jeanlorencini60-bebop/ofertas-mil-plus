@@ -3,6 +3,7 @@ import os
 import re
 import sqlite3
 from datetime import datetime, timedelta, timezone
+from urllib.parse import parse_qs, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -78,6 +79,15 @@ def resolve(url):
 
 
 def extract_mlb(url):
+    # A /p/MLB... URL identifies a catalog product; wid identifies a
+    # purchasable listing. Prefer wid when both are present.
+    parts = urlsplit(url)
+    for query in (parts.query, parts.fragment):
+        for candidate in parse_qs(query).get("wid", []):
+            match = re.search(r"MLB[-_]?([0-9]{6,})", candidate.upper())
+            if match:
+                return f"MLB{match.group(1)}"
+
     match = re.search(r"MLB[-_]?([0-9]{6,})", url.upper())
     return f"MLB{match.group(1)}" if match else None
 
@@ -118,9 +128,84 @@ def scrape_page(html):
     return title, (min(prices) if prices else None)
 
 
-def fetch_product(affiliate_url):
+def parse_card_amount(element):
+    """Read one Mercado Livre money component without mixing installment prices."""
+    if not element:
+        return None
+    fraction = element.select_one(".andes-money-amount__fraction")
+    cents = element.select_one(".andes-money-amount__cents")
+    if not fraction:
+        return None
+    try:
+        whole = int(fraction.get_text(strip=True).replace(".", ""))
+        decimal = int(cents.get_text(strip=True)) if cents else 0
+        return whole + decimal / 100
+    except ValueError:
+        return None
+
+
+def scrape_social_product(html):
+    """Extract only the featured product from an affiliate social profile."""
+    if not html:
+        return None
+    soup = BeautifulSoup(html, "html.parser")
+    # The profile's featured product is rendered as a list card. Recommendations
+    # below it are grid cards and must never be mistaken for the promoted item.
+    card = soup.select_one(".poly-card--list")
+    if not card:
+        return None
+    title = card.select_one(".poly-component__title")
+    current = card.select_one(".poly-price__current .andes-money-amount")
+    original = card.select_one(".andes-money-amount--previous")
+    product_link = title.get("href") if title else None
+    price = parse_card_amount(current)
+    original_price = parse_card_amount(original)
+    if not title or not price:
+        return None
+    discount = (
+        round((original_price - price) / original_price * 100, 2)
+        if original_price and original_price > price else 0.0
+    )
+    return {
+        "title": title.get_text(" ", strip=True),
+        "price": price,
+        "original_price": original_price,
+        "discount_pct": discount,
+        "item_id": extract_mlb(product_link or ""),
+    }
+
+
+def fetch_product(affiliate_url, product_url=None):
     canonical, html = resolve(affiliate_url)
-    item_id = extract_mlb(canonical)
+
+    if "/social/" in urlsplit(canonical).path.lower():
+        featured = scrape_social_product(html)
+        expected_item_id = extract_mlb(product_url or "")
+        if featured and (not expected_item_id or featured["item_id"] == expected_item_id):
+            return {
+                "canonical_url": canonical,
+                "item_id": featured["item_id"],
+                "title": featured["title"],
+                "price": featured["price"],
+                "original_price": featured["original_price"],
+                "discount_pct": featured["discount_pct"],
+                "available": 1,
+            }
+        print("social link skipped: featured product missing or does not match product_url")
+        return {
+            "canonical_url": canonical,
+            "item_id": featured["item_id"] if featured else None,
+            "title": None,
+            "price": None,
+            "original_price": None,
+            "discount_pct": 0.0,
+            "available": 0,
+        }
+
+    # Use a user-specified product page for lookup while retaining the
+    # affiliate link for the message sent to the channel.
+    lookup_url = product_url or canonical
+    item_id = extract_mlb(lookup_url)
     item = item_api(item_id)
 
     if item:
@@ -136,6 +221,20 @@ def fetch_product(affiliate_url):
             "original_price": original,
             "discount_pct": discount,
             "available": available,
+        }
+
+    if product_url:
+        # Product pages can contain recommendation prices. If the exact item
+        # API lookup fails, fail closed instead of mistaking a recommendation.
+        print("product URL lookup failed:", item_id or product_url)
+        return {
+            "canonical_url": canonical,
+            "item_id": item_id,
+            "title": None,
+            "price": None,
+            "original_price": None,
+            "discount_pct": 0.0,
+            "available": 0,
         }
 
     title, price = scrape_page(html)
@@ -247,10 +346,10 @@ def run():
         if not product.get("enabled", True):
             continue
         try:
-            info = fetch_product(product["affiliate_url"])
+            info = fetch_product(product["affiliate_url"], product.get("product_url"))
             upsert(con, product, info)
             row = con.execute("SELECT * FROM products WHERE id=?", (product["id"],)).fetchone()
-            print(product["id"], row["title"], row["price"], row["discount_pct"])
+            print(product["id"], row["item_id"], row["title"], row["price"], row["discount_pct"])
             if eligible(row):
                 candidates.append(row)
         except Exception as exc:
