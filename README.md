@@ -48,3 +48,9 @@ O módulo de publicação está preparado para um provedor compatível com Canai
 ## Mercado Livre
 
 Use apenas os links de afiliado oficiais gerados pelo programa do Mercado Livre. O sistema não fabrica links de afiliado e não automatiza cliques ou compras.
+
+
+## Landing page
+
+- Produção: https://guiadoacougue.com.br
+- Vercel: https://guia-acougue-jeanlorencini60-2052.vercel.app
