@@ -1,5 +1,22 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": ""
+  "buildCommand": "",
+  "redirects": [
+    {
+      "source": "/guia-acougue.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/guia-acougue-v2.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
