@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500">
+<defs>
+ <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2820"/><stop offset="0.55" stop-color="#1c1511"/><stop offset="1" stop-color="#6a2b1e"/></linearGradient>
+ <radialGradient id="glow" cx="65%" cy="48%" r="62%"><stop offset="0" stop-color="#9e5135" stop-opacity=".38"/><stop offset="1" stop-color="#1f1713" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1000" height="1500" fill="#1f1713"/>
+<rect width="1000" height="1500" fill="url(#g)"/>
+<rect width="1000" height="1500" fill="url(#glow)"/>
+<circle cx="870" cy="150" r="90" fill="#8d3a27" opacity=".20"/>
+<circle cx="140" cy="1260" r="120" fill="#8d3a27" opacity=".12"/>
+<g fill="none" stroke="#f7f2ea" stroke-opacity=".18">
+ <path d="M0 820 C220 760, 420 850, 1000 770" stroke-width="3"/>
+ <path d="M0 870 C220 810, 520 900, 1000 820" stroke-width="1"/>
+</g>
+<text x="90" y="95" fill="#f7f2ea" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">O GUIA DO AÇOUGUE</text>
+<rect x="90" y="122" width="86" height="7" rx="3.5" fill="#a33b24"/>
+<text x="90" y="285" fill="#f7f2ea" font-family="Georgia,serif" font-size="82" font-weight="700">Qual corte escolher?</text>
+<text x="90" y="395" fill="#d5c7bb" font-family="Arial,sans-serif" font-size="32" font-weight="400">Comece pelo preparo. O corte certo deixa a compra mais simples.</text>
+<g transform="translate(95,535)">
+ <path d="M0 100 C35 55 85 48 128 64 C170 80 216 77 252 110 C214 140 160 156 100 154 C53 152 19 136 0 100Z" fill="#a33b24" opacity=".88"/>
+ <path d="M28 104 C66 83 112 83 155 101 C121 117 79 127 38 122Z" fill="#f2d2bb" opacity=".42"/>
+ <path d="M72 86 C84 72 102 71 114 83 C103 95 88 100 72 96Z" fill="#6f2017" opacity=".72"/>
+ <path d="M150 105 C163 91 181 92 191 105 C181 117 165 122 150 116Z" fill="#6f2017" opacity=".72"/>
+ <path d="M220 92 C232 80 247 82 258 94 C249 108 233 111 220 104Z" fill="#6f2017" opacity=".72"/>
+</g>
+<g font-family="Arial,sans-serif">
+ <rect x="90" y="760" width="820" height="92" rx="20" fill="rgba(255,255,255,.06)" stroke="#ffffff" stroke-opacity=".10"/>
+<text x="125" y="818" fill="#f7f2ea" font-size="28" font-weight="700">Pouco tempo</text>
+<text x="845" y="818" fill="#a33b24" text-anchor="end" font-size="26" font-weight="700">✓</text>
+</g>
+<text x="90" y="1410" fill="#f7f2ea" font-family="Arial,sans-serif" font-size="24" letter-spacing="2">tipos de corte • melhor preparo • compra sem dúvida</text>
+<text x="910" y="1410" fill="#a33b24" font-family="Arial,sans-serif" font-size="24" text-anchor="end" font-weight="700">SALVE ESTE PIN</text>
+</svg>
