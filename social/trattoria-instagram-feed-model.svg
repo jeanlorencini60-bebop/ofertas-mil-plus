@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#142c25"/><stop offset=".6" stop-color="#071813"/><stop offset="1" stop-color="#3f2920"/></linearGradient><linearGradient id="b"><stop stop-color="#f3dfa9"/><stop offset="1" stop-color="#b37d35"/></linearGradient><radialGradient id="c"><stop stop-color="#b77e34" stop-opacity=".42"/><stop offset="1" stop-color="#b77e34" stop-opacity="0"/></radialGradient></defs>
+<rect width="1080" height="1350" fill="url(#a)"/><ellipse cx="770" cy="370" rx="450" ry="420" fill="url(#c)"/><rect x="32" y="32" width="1016" height="1286" fill="none" stroke="#bd9147" stroke-width="3"/>
+<text x="86" y="110" fill="#e8d7b4" font-family="Arial" font-size="22" letter-spacing="6">TRATTORIA TRUSSARDI</text>
+<text x="82" y="250" fill="#f5eddb" font-family="Georgia" font-size="80" font-weight="bold">A MESA DE</text>
+<text x="82" y="340" fill="url(#b)" font-family="Georgia" font-size="95" font-weight="bold">MORIOH</text>
+<text x="88" y="402" fill="#f0e8d8" font-family="Arial" font-size="29">está servida.</text>
+<!-- chef upper right -->
+<g transform="translate(645 180) scale(.9)">
+<path d="M210 110C165 77 193 20 245 34C290 4 350 46 325 100C365 132 345 178 310 180H185C145 166 157 126 210 110Z" fill="#f3eddf"/>
+<path d="M188 178C170 255 180 355 220 425H340C374 334 367 245 310 178Z" fill="#eee7d8"/>
+<path d="M190 270C245 306 304 301 355 262L364 337C310 385 238 385 187 335Z" fill="#18392f"/>
+<path d="M230 130C249 98 300 102 312 137C322 166 297 197 270 198C239 189 218 160 230 130Z" fill="#d7a77d"/>
+<path d="M226 139Q266 115 307 140" stroke="#30221c" stroke-width="11" fill="none" stroke-linecap="round"/>
+<path d="M247 164L263 162M284 165L299 163" stroke="#30221c" stroke-width="7" stroke-linecap="round"/>
+<path d="M255 188Q274 202 293 186" stroke="#8d3e31" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M242 198L273 248L302 199" stroke="#bd8b3b" stroke-width="9" fill="none"/>
+</g>
+<!-- pasta plate -->
+<g transform="translate(520 800)">
+<ellipse rx="390" ry="208" fill="#f3ecdc" stroke="#c18d3b" stroke-width="12"/>
+<ellipse rx="335" ry="164" fill="#fff9e9" stroke="#244a3b" stroke-width="6"/>
+<path d="M-245 -8C-125 -132 140 -130 235 -18C150 125 -145 126 -245 -8Z" fill="#b33c2e"/>
+<g stroke="#f0d5a1" fill="none" stroke-width="12" stroke-linecap="round"><path d="M-202 -40C-112 -105 105 -82 195 -36"/><path d="M-176 7C-70 -45 86 -23 166 12"/><path d="M-135 54C-40 28 60 60 122 70"/></g>
+<g fill="#39774a"><ellipse cx="-122" cy="-47" rx="28" ry="15" transform="rotate(-28 -122 -47)"/><ellipse cx="54" cy="43" rx="33" ry="16" transform="rotate(18 54 43)"/><ellipse cx="150" cy="-38" rx="25" ry="13"/></g>
+<g fill="#e7d6b5"><circle cx="-17" cy="-51" r="18"/><circle cx="89" cy="11" r="18"/></g>
+</g>
+<text x="86" y="1088" fill="#f5eddb" font-family="Arial" font-size="28" font-weight="bold">7 PRATOS. UM CHEF. UMA HISTÓRIA.</text>
+<text x="88" y="1140" fill="#d8c8a9" font-family="Arial" font-size="24">Receitas inspiradas em Tonio Trussardi</text>
+<text x="88" y="1182" fill="#d8c8a9" font-family="Arial" font-size="24">e no universo de JoJo Parte 4.</text>
+<rect x="80" y="1215" width="920" height="72" rx="16" fill="url(#b)"/><text x="540" y="1261" text-anchor="middle" fill="#0b211b" font-family="Arial" font-size="23" font-weight="bold" letter-spacing="2">SALVE · COMPARTILHE · LINK NA BIO</text>
+<text x="88" y="1310" fill="#bfb194" font-family="Arial" font-size="15" letter-spacing="2">FAN E-BOOK INDEPENDENTE · NÃO OFICIAL</text>
+</svg>
