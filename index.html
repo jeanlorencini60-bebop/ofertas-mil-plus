@@ -1,98 +1,55 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://guiadoacougue.com.br/">
-<meta property="og:title" content="O Guia do Açougue — compre carne sem enrolação">
-<meta property="og:description" content="Saiba qual corte escolher, quanto comprar e qual preparo combina com ele.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://guiadoacougue.com.br/">
-<title>O Guia do Açougue — compre carne sem enrolação</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Sete receitas italianas inspiradas na cozinha de Tonio Trussardi, na Trattoria de Morioh e em JoJo Parte 4.">
+<meta property="og:title" content="Trattoria Trussardi — O livro de receitas do chef que cura com sabor">
+<meta property="og:description" content="Sete receitas italianas, passo a passo. Projeto independente de fã.">
+<meta property="og:image" content="https://raw.githubusercontent.com/jeanlorencini60-bebop/ofertas-mil-plus/main/social/trattoria-hero.svg">
+<title>Trattoria Trussardi — O livro de receitas do chef que cura com sabor</title>
 <style>
-body{margin:0;background:#f7f2ea;color:#231f1a;font-family:Arial,sans-serif;line-height:1.6}
-.wrap{max-width:1080px;margin:auto;padding:28px 20px}
-.hero{padding:70px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.badge{color:#a33b24;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
-h1,h2{font-family:Georgia,serif;line-height:1.05}h1{font-size:64px;margin:14px 0}h2{font-size:42px}
-.lead{font-size:20px;color:#6d655c}
-.btn{display:inline-block;background:#a33b24;color:white;padding:15px 22px;border-radius:10px;font-weight:800;text-decoration:none;margin:8px 8px 8px 0}
-.btn.alt{background:transparent;color:#231f1a;border:1px solid #ded5c8}
-.cover{background:linear-gradient(145deg,#30221d,#6c2f21,#b97841);color:white;border-radius:22px;padding:40px;min-height:390px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 50px #2f1f1320}
-.cover h3{font:48px Georgia,serif;max-width:380px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0 70px}
-.card{background:#fffdf9;border:1px solid #ded5c8;padding:24px;border-radius:18px}
-.section{padding:65px 0;border-top:1px solid #ded5c8}
-.price{font:56px Georgia,serif}.buy{background:#fffdf9;border:1px solid #ded5c8;border-radius:20px;padding:30px}
-li{margin:10px 0}
-small{color:#6d655c}
-@media(max-width:800px){.hero,.cards{grid-template-columns:1fr}h1{font-size:48px}}
+:root{--bg:#0b1d18;--green:#1b4033;--gold:#c59a4e;--cream:#f3ead8;--muted:#c8b99a;--red:#963c2e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.6 Arial,sans-serif}
+.wrap{max-width:1120px;margin:auto;padding:24px}
+header{display:flex;justify-content:space-between;border-bottom:1px solid #715a34;padding:10px 0 18px;font-size:12px;letter-spacing:3px;color:var(--muted)}
+.hero{padding:30px 0 55px}.hero img{width:100%;display:block;border:1px solid var(--gold)}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.1;margin-top:0}
+h1{font-size:clamp(42px,7vw,78px);margin:28px 0 14px}h1 em{color:var(--gold);font-style:normal}
+.kicker{color:var(--gold);font-size:12px;letter-spacing:4px;text-transform:uppercase;font-weight:bold}
+.lead{max-width:760px;font-size:19px;color:#e1d5bd}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.btn{padding:13px 19px;background:var(--gold);color:#13251d;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;font-size:12px}.btn.alt{background:transparent;color:var(--cream);border:1px solid #8e754c}
+section{border-top:1px solid #51452f;padding:55px 0}.head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:25px}.head h2{font-size:clamp(32px,4vw,48px);margin:0}.head p{max-width:420px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.recipe{background:linear-gradient(145deg,#204638,#112820);border:1px solid #725a34;padding:22px;min-height:180px}.recipe small{color:var(--gold);letter-spacing:2px;text-transform:uppercase}.recipe h3{font-size:25px;margin:12px 0}.recipe p{margin:0;color:#d6c8ad;font-size:14px}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px}.cover{border:1px solid var(--gold);background:linear-gradient(145deg,#244c3d,#071812);padding:28px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:12px 12px 0 #963c2e44}.cover h2{font-size:44px;margin:30px 0}.cover span{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:11px}.about p{color:#d8cbb2}
+.status{background:var(--cream);color:#1c2d24;padding:30px;border-top:5px solid var(--gold)}.status h2{font-size:34px;margin:0 0 10px}.status p{max-width:820px;margin:0;color:#5f5b4e}.tag{display:inline-block;margin-top:20px;background:#ead9b3;padding:9px 12px;color:#72472d;font-size:11px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+.disclaimer{font-size:12px;text-align:center;color:#bfb194;max-width:850px;margin:25px auto 0}
+footer{border-top:1px solid #51452f;padding:22px 0;color:var(--muted);font-size:12px}
+@media(max-width:760px){.head,.about{display:block}.head p{margin-top:12px}.grid{grid-template-columns:1fr 1fr}.cover{margin-bottom:25px}}
+@media(max-width:520px){.wrap{padding:17px}.grid{grid-template-columns:1fr}header{display:block}header span{display:block;margin-top:7px}}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LN4945FHKS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LN4945FHKS');
-</script>
 </head>
-<body>
-<div class="wrap">
-<header><strong>O GUIA DO <span style="color:#a33b24">AÇOUGUE</span></strong></header>
-<section class="hero">
-<div>
-<div class="badge">Guia prático • edição 01</div>
-<h1>Compre carne sem enrolação.</h1>
-<p class="lead">Saiba qual corte escolher, quanto comprar e qual preparo combina com ele — do almoço de terça ao churrasco de fim de semana.</p>
-<a class="btn" id="buy-link-top" href="https://pay.kiwify.com.br/loY4xSv" onclick="return true;">Quero o Guia do Açougue</a>
-<a class="btn alt" href="#conteudo">Ver o que está dentro</a>
+<body><div class="wrap">
+<header><strong>TRATTORIA TRUSSARDI</strong><span>EDIZIONE SPECIALE · MORIOH · PARTE 4</span></header>
+<main>
+<div class="hero">
+<img src="https://raw.githubusercontent.com/jeanlorencini60-bebop/ofertas-mil-plus/main/social/trattoria-hero.svg" alt="Ilustração editorial da Trattoria Trussardi com chef e pratos italianos">
+<div class="kicker" style="margin-top:30px">O livro de receitas do chef que cura com sabor</div>
+<h1>O cardápio de <em>Morioh</em> está servido.</h1>
+<p class="lead">Sete receitas italianas inspiradas na cozinha de Tonio Trussardi — da água aromatizada ao pudim de caramelo. Ingredientes, quantidades e passo a passo para levar um pouco da Trattoria para sua casa.</p>
+<div class="buttons"><a class="btn" href="#receitas">Conhecer as receitas</a><a class="btn alt" href="#edicao">Sobre esta edição</a></div>
 </div>
-<div class="cover"><div>GUIA PRÁTICO</div><div><h3>O Guia do Açougue</h3><p>Cortes, gordura, ponto de preparo e quantidade — em um só lugar.</p></div><div>21 capítulos curtos • 24 páginas</div></div>
-</section>
-<section class="cards">
-<div class="card"><h3>Escolha o corte</h3><p>Fluxogramas para chegar ao corte certo conforme tempo, gordura e objetivo.</p></div>
-<div class="card"><h3>Quanto comprar</h3><p>Tabelas de gramas por pessoa para o dia a dia e para churrasco.</p></div>
-<div class="card"><h3>Churrasco</h3><p>Cortes clássicos, ordem de entrada na grelha, pontos da carne e dicas práticas.</p></div>
-</section>
-<section id="conteudo" class="section">
-<h2>Você não precisa entender de carne.</h2>
-<p class="lead">O guia foi feito para consulta rápida: abra a parte que resolve sua dúvida e siga em frente.</p>
-<ul>
-<li>Como identificar carne fresca e sinais de alerta</li>
-<li>Dianteiro x traseiro e quando usar cada tipo</li>
-<li>Cortes magros, suculentos, de panela e ricos em colágeno</li>
-<li>Carne moída: qual corte pedir</li>
-<li>Frango e carne suína para o dia a dia</li>
-<li>Quanto comprar por pessoa</li>
-<li>Semana prática para quem mora sozinho</li>
-<li>Churrasco: cortes, quantidade e ordem da grelha</li>
-<li>Pontos da carne e temperaturas de referência</li>
-<li>Armazenamento, congelamento e descongelamento</li>
-<li>Cola de bolso e glossário rápido</li>
-</ul>
-</section>
-<section class="section">
-<div class="buy"><div class="badge">Produto digital</div><h2>O Guia do Açougue — Edição 01</h2><p>Um material prático para comprar carne com mais segurança e decidir o preparo sem ficar perdido no balcão.</p><div class="price">R$ 19,90</div><small>Pagamento único • acesso digital</small><br><a class="btn" id="buy-link" href="https://pay.kiwify.com.br/loY4xSv" onclick="return true;">Comprar agora</a><p><small>O acesso é entregue digitalmente após a confirmação do pagamento.</small></p></div>
-</section>
-<section class="section">
-<h2>Perguntas frequentes</h2>
-<p><strong>É só para churrasco?</strong><br>Não. O guia cobre compras e preparos do dia a dia, além de uma seção especial de churrasco.</p>
-<p><strong>Preciso ler tudo?</strong><br>Não. Os capítulos são curtos e pensados para consulta.</p>
-<p><strong>As quantidades são de carne pronta?</strong><br>Não. As referências do guia são de carne crua, por pessoa e por refeição.</p>
-</section>
-<footer style="padding:40px 0;color:#6d655c">O Guia do Açougue • material prático de consulta.</footer>
-</div>
-<script>
-const params=new URLSearchParams(window.location.search);
-["src","sck","utm_source","utm_medium","utm_campaign","utm_term","utm_content","s1","s2","s3"].forEach(k=>{
-  const v=params.get(k);
-  if(v){
-    ["buy-link","buy-link-top"].forEach(id=>{
-      const el=document.getElementById(id);
-      if(el) el.href+=(el.href.includes("?")?"&":"?")+encodeURIComponent(k)+"="+encodeURIComponent(v);
-    });
-  }
-});
-</script>
-</body>
-</html>
+<section id="receitas"><div class="head"><h2>Sete pratos. Uma experiência.</h2><p>Receitas completas com rendimento, tempo, dificuldade, modo de preparo e dicas do chef.</p></div>
+<div class="grid">
+<article class="recipe"><small>01 · Para começar</small><h3>Acqua Depurativa</h3><p>Água aromatizada com limão, pepino e hortelã.</p></article>
+<article class="recipe"><small>02 · Entrada</small><h3>Insalata Caprese</h3><p>Tomate, mussarela de búfala, manjericão e azeite.</p></article>
+<article class="recipe"><small>03 · Massa</small><h3>Spaghetti alla Puttanesca</h3><p>Tomate, azeitonas, alcaparras, alho e pimenta.</p></article>
+<article class="recipe"><small>04 · Risoto</small><h3>Risotto ai Frutti di Mare</h3><p>Arroz arbóreo, camarões, vieiras e mantecatura.</p></article>
+<article class="recipe"><small>05 · Frutos do mar</small><h3>Polpo in Umido</h3><p>Polvo estufado ao molho de tomate, com ervas.</p></article>
+<article class="recipe"><small>06 · Carnes</small><h3>Costolette d'Agnello</h3><p>Costelinhas de cordeiro com ervas, mel e mostarda.</p></article>
+<article class="recipe"><small>07 · Sobremesa</small><h3>Budino al Caramello</h3><p>Pudim italiano de caramelo preparado em banho-maria.</p></article>
+</div></section>
+<section id="edicao"><div class="about"><div class="cover"><span>FAN E-BOOK · RICETTE DELLA PARTE 4</span><h2>Trattoria<br>Trussardi</h2><span>7 RECEITAS · PASSO A PASSO · CUCINA ITALIANA</span></div><div><div class="kicker">Sobre a edição</div><h2>Uma cozinha sem cardápio fixo.</h2><p>Na história, Tonio observa cada cliente antes de decidir o que preparar. Esta edição artesanal de fã transforma sete pratos associados à Trattoria em receitas reais, com ingredientes acessíveis e instruções para preparar em casa.</p><p>O PDF enviado contém 16 páginas, apresentando as receitas em sequência, com dicas práticas e contextualização do universo de Morioh.</p></div></div></section>
+<section><div class="status"><div class="kicker">Status do projeto</div><h2>Uma nova temporada está sendo preparada.</h2><p>Esta página é uma prévia de desenvolvimento. O produto ainda não está à venda e nenhum pagamento está sendo recebido. A distribuição comercial e a divulgação promocional serão avaliadas após a obtenção das autorizações necessárias.</p><span class="tag">Pré-lançamento · sem checkout ativo</span></div><p class="disclaimer">Projeto independente de fã, não oficial, sem afiliação ou patrocínio declarado dos titulares de JoJo's Bizarre Adventure. A identificação da obra não substitui eventual autorização para exploração comercial.</p></section>
+</main><footer>TRATTORIA TRUSSARDI · FAN E-BOOK · PROJETO DE DESENVOLVIMENTO</footer>
+</div></body></html>
