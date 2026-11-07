@@ -13,7 +13,8 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.6 Arial,sans-serif}
 .wrap{max-width:1120px;margin:auto;padding:24px}
-header{display:flex;justify-content:space-between;border-bottom:1px solid #715a34;padding:10px 0 18px;font-size:12px;letter-spacing:3px;color:var(--muted)}
+header{display:flex;justify-content:space-between;align-items:center;gap:14px;border-bottom:1px solid #715a34;padding:10px 0 18px;font-size:12px;letter-spacing:3px;color:var(--muted)}
+.fan-label{display:inline-flex;align-items:center;border:1px solid var(--gold);padding:7px 11px;color:#f3ead8;font-size:10px;letter-spacing:2px;font-weight:bold;background:#321e19}
 .hero{padding:30px 0 58px}
 .hero-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
 .hero-copy{padding:18px 0 22px}
@@ -53,21 +54,21 @@ section{border-top:1px solid #51452f;padding:55px 0}
 .disclaimer{font-size:12px;text-align:center;color:#bfb194;max-width:850px;margin:25px auto 0}
 footer{border-top:1px solid #51452f;padding:22px 0;color:var(--muted);font-size:12px}
 @media(max-width:760px){.hero-layout{grid-template-columns:1fr;gap:24px}.hero-figure{min-height:0;max-height:620px}.hero-figure img{max-height:620px;width:min(100%,510px);margin:auto}.head,.about{display:block}.head p{margin-top:12px}.grid{grid-template-columns:1fr 1fr}.cover{margin-bottom:25px}}
-@media(max-width:520px){.wrap{padding:17px}.grid{grid-template-columns:1fr}header{display:block}header span{display:block;margin-top:7px}.hero{padding-top:20px}.lead{font-size:17px}.hero-figure{max-height:560px}.hero-figure img{max-height:560px}}
+@media(max-width:520px){.wrap{padding:17px}.grid{grid-template-columns:1fr}header{display:block}header span{display:inline-flex;margin-top:10px}.hero{padding-top:20px}.lead{font-size:17px}.hero-figure{max-height:560px}.hero-figure img{max-height:560px}}
 </style>
 </head>
 <body><div class="wrap">
-<header><strong>TRATTORIA TRUSSARDI</strong><span>EDIZIONE SPECIALE · MORIOH · PARTE 4</span></header>
+<header><strong>TRATTORIA TRUSSARDI</strong><span class="fan-label">FAN-MADE · NÃO OFICIAL</span></header>
 <main>
 <div class="hero">
 <div class="hero-layout">
 <div class="hero-copy">
-<div class="kicker">O livro de receitas do chef que cura com sabor</div>
+<div class="kicker">Fan e-book artesanal · inspirado em JoJo Parte 4</div>
 <h1>O chef de <em>Morioh</em> convida você à mesa.</h1>
 <p class="lead">Sete receitas italianas inspiradas na cozinha de Tonio Trussardi — da água aromatizada ao pudim de caramelo. Ingredientes, quantidades e passo a passo para levar um pouco da Trattoria para sua casa.</p>
 <div class="proof-row"><span class="proof">7 receitas completas</span><span class="proof">Passo a passo</span><span class="proof">Cozinha italiana</span></div>
 <div class="buttons"><a class="btn" href="#receitas">Conhecer as receitas</a><a class="btn alt" href="#edicao">Sobre esta edição</a></div>
-<p class="fan-note">Fan e-book artesanal inspirado em <em>JoJo's Bizarre Adventure: Diamond is Unbreakable</em>. Projeto independente e não oficial.</p>
+<p class="fan-note"><strong>IMPORTANTE: ESTE É UM PRODUTO FAN-MADE.</strong> Projeto independente de fã, não oficial e sem afiliação, patrocínio ou endosso dos titulares de <em>JoJo's Bizarre Adventure</em>. A referência à obra identifica a inspiração do projeto e não significa que seja um produto oficial.</p>
 </div>
 <figure class="hero-figure">
 <img src="https://raw.githubusercontent.com/jeanlorencini60-bebop/ofertas-mil-plus/main/social/trattoria-hero.svg" alt="Ilustração do chef Tonio Trussardi inspirado na referência enviada, de uniforme branco, toque alto e lenço vermelho, com os braços cruzados">
