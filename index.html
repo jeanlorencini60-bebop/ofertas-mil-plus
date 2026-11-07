@@ -10,34 +10,70 @@
 <title>Trattoria Trussardi — O livro de receitas do chef que cura com sabor</title>
 <style>
 :root{--bg:#0b1d18;--green:#1b4033;--gold:#c59a4e;--cream:#f3ead8;--muted:#c8b99a;--red:#963c2e}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.6 Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.6 Arial,sans-serif}
 .wrap{max-width:1120px;margin:auto;padding:24px}
 header{display:flex;justify-content:space-between;border-bottom:1px solid #715a34;padding:10px 0 18px;font-size:12px;letter-spacing:3px;color:var(--muted)}
-.hero{padding:30px 0 55px}.hero img{width:100%;display:block;border:1px solid var(--gold)}
+.hero{padding:30px 0 58px}
+.hero-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+.hero-copy{padding:18px 0 22px}
+.hero-figure{margin:0;position:relative;overflow:hidden;min-height:530px;max-height:740px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 35%,#285443 0%,#10271f 62%,#071612 100%);border:1px solid rgba(197,154,78,.65);box-shadow:18px 20px 0 rgba(150,60,46,.18)}
+.hero-figure:before{content:"";position:absolute;inset:14px;border:1px solid rgba(197,154,78,.22);pointer-events:none}
+.hero-figure img{position:relative;width:100%;height:auto;max-height:740px;object-fit:contain;display:block}
+.hero-figure figcaption{position:absolute;left:18px;right:18px;bottom:14px;text-align:center;font-family:Georgia,serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#e7d7b7;text-shadow:0 2px 8px #000}
 h1,h2,h3{font-family:Georgia,serif;line-height:1.1;margin-top:0}
-h1{font-size:clamp(42px,7vw,78px);margin:28px 0 14px}h1 em{color:var(--gold);font-style:normal}
+h1{font-size:clamp(42px,5.3vw,68px);margin:20px 0 18px;letter-spacing:-.035em}
+h1 em{color:var(--gold);font-style:normal}
 .kicker{color:var(--gold);font-size:12px;letter-spacing:4px;text-transform:uppercase;font-weight:bold}
-.lead{max-width:760px;font-size:19px;color:#e1d5bd}
-.buttons{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.btn{padding:13px 19px;background:var(--gold);color:#13251d;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;font-size:12px}.btn.alt{background:transparent;color:var(--cream);border:1px solid #8e754c}
-section{border-top:1px solid #51452f;padding:55px 0}.head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:25px}.head h2{font-size:clamp(32px,4vw,48px);margin:0}.head p{max-width:420px;color:var(--muted);margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.recipe{background:linear-gradient(145deg,#204638,#112820);border:1px solid #725a34;padding:22px;min-height:180px}.recipe small{color:var(--gold);letter-spacing:2px;text-transform:uppercase}.recipe h3{font-size:25px;margin:12px 0}.recipe p{margin:0;color:#d6c8ad;font-size:14px}
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px}.cover{border:1px solid var(--gold);background:linear-gradient(145deg,#244c3d,#071812);padding:28px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:12px 12px 0 #963c2e44}.cover h2{font-size:44px;margin:30px 0}.cover span{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:11px}.about p{color:#d8cbb2}
-.status{background:var(--cream);color:#1c2d24;padding:30px;border-top:5px solid var(--gold)}.status h2{font-size:34px;margin:0 0 10px}.status p{max-width:820px;margin:0;color:#5f5b4e}.tag{display:inline-block;margin-top:20px;background:#ead9b3;padding:9px 12px;color:#72472d;font-size:11px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+.lead{max-width:590px;font-size:19px;color:#e1d5bd;margin:0}
+.fan-note{margin-top:20px;color:#c8b99a;font-size:13px;border-left:3px solid var(--red);padding:5px 0 5px 14px;max-width:540px}
+.proof-row{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 0}
+.proof{border:1px solid rgba(197,154,78,.45);padding:9px 12px;color:#eddfc5;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin:27px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 19px;background:var(--gold);color:#13251d;text-decoration:none;font-weight:bold;text-transform:uppercase;letter-spacing:1px;font-size:12px;border:1px solid var(--gold)}
+.btn.alt{background:transparent;color:var(--cream);border:1px solid #8e754c}
+section{border-top:1px solid #51452f;padding:55px 0}
+.head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:25px}
+.head h2{font-size:clamp(32px,4vw,48px);margin:0}
+.head p{max-width:420px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.recipe{background:linear-gradient(145deg,#204638,#112820);border:1px solid #725a34;padding:22px;min-height:180px}
+.recipe small{color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+.recipe h3{font-size:25px;margin:12px 0}
+.recipe p{margin:0;color:#d6c8ad;font-size:14px}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px}
+.cover{border:1px solid var(--gold);background:linear-gradient(145deg,#244c3d,#071812);padding:28px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:12px 12px 0 #963c2e44}
+.cover h2{font-size:44px;margin:30px 0}
+.cover span{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:11px}
+.about p{color:#d8cbb2}
+.status{background:var(--cream);color:#1c2d24;padding:30px;border-top:5px solid var(--gold)}
+.status h2{font-size:34px;margin:0 0 10px}
+.status p{max-width:820px;margin:0;color:#5f5b4e}
+.tag{display:inline-block;margin-top:20px;background:#ead9b3;padding:9px 12px;color:#72472d;font-size:11px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
 .disclaimer{font-size:12px;text-align:center;color:#bfb194;max-width:850px;margin:25px auto 0}
 footer{border-top:1px solid #51452f;padding:22px 0;color:var(--muted);font-size:12px}
-@media(max-width:760px){.head,.about{display:block}.head p{margin-top:12px}.grid{grid-template-columns:1fr 1fr}.cover{margin-bottom:25px}}
-@media(max-width:520px){.wrap{padding:17px}.grid{grid-template-columns:1fr}header{display:block}header span{display:block;margin-top:7px}}
+@media(max-width:760px){.hero-layout{grid-template-columns:1fr;gap:24px}.hero-figure{min-height:0;max-height:620px}.hero-figure img{max-height:620px;width:min(100%,510px);margin:auto}.head,.about{display:block}.head p{margin-top:12px}.grid{grid-template-columns:1fr 1fr}.cover{margin-bottom:25px}}
+@media(max-width:520px){.wrap{padding:17px}.grid{grid-template-columns:1fr}header{display:block}header span{display:block;margin-top:7px}.hero{padding-top:20px}.lead{font-size:17px}.hero-figure{max-height:560px}.hero-figure img{max-height:560px}}
 </style>
 </head>
 <body><div class="wrap">
 <header><strong>TRATTORIA TRUSSARDI</strong><span>EDIZIONE SPECIALE · MORIOH · PARTE 4</span></header>
 <main>
 <div class="hero">
-<img src="https://raw.githubusercontent.com/jeanlorencini60-bebop/ofertas-mil-plus/main/social/trattoria-hero.svg" alt="Ilustração editorial da Trattoria Trussardi com chef e pratos italianos">
-<div class="kicker" style="margin-top:30px">O livro de receitas do chef que cura com sabor</div>
-<h1>O cardápio de <em>Morioh</em> está servido.</h1>
+<div class="hero-layout">
+<div class="hero-copy">
+<div class="kicker">O livro de receitas do chef que cura com sabor</div>
+<h1>O chef de <em>Morioh</em> convida você à mesa.</h1>
 <p class="lead">Sete receitas italianas inspiradas na cozinha de Tonio Trussardi — da água aromatizada ao pudim de caramelo. Ingredientes, quantidades e passo a passo para levar um pouco da Trattoria para sua casa.</p>
+<div class="proof-row"><span class="proof">7 receitas completas</span><span class="proof">Passo a passo</span><span class="proof">Cozinha italiana</span></div>
 <div class="buttons"><a class="btn" href="#receitas">Conhecer as receitas</a><a class="btn alt" href="#edicao">Sobre esta edição</a></div>
+<p class="fan-note">Fan e-book artesanal inspirado em <em>JoJo's Bizarre Adventure: Diamond is Unbreakable</em>. Projeto independente e não oficial.</p>
+</div>
+<figure class="hero-figure">
+<img src="https://raw.githubusercontent.com/jeanlorencini60-bebop/ofertas-mil-plus/main/social/trattoria-hero.svg" alt="Ilustração do chef Tonio Trussardi inspirado na referência enviada, de uniforme branco, toque alto e lenço vermelho, com os braços cruzados">
+<figcaption>Trattoria · Morioh · Parte 4</figcaption>
+</figure>
+</div>
 </div>
 <section id="receitas"><div class="head"><h2>Sete pratos. Uma experiência.</h2><p>Receitas completas com rendimento, tempo, dificuldade, modo de preparo e dicas do chef.</p></div>
 <div class="grid">
